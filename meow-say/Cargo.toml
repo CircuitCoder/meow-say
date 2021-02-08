@@ -1,0 +1,21 @@
+[package]
+name = "meow_say"
+version = "0.1.0"
+authors = ["Liu Xiaoyi <circuitcoder0@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.38"
+env_logger = "0.8.2"
+futures = "0.3.12"
+image = "0.23.13"
+imageproc = "0.22.0"
+lazy_static = "1.4.0"
+log = "0.4.14"
+paw = "1.0.0"
+rusttype = "0.9.2"
+structopt = { version="0.3.21", features=["paw"] }
+telegram-bot = { path="../telegram-bot/lib" }
+tokio = { version="1.2.0", features=["macros", "rt-multi-thread"] }

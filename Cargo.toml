@@ -1,0 +1,2 @@
+[workspace]
+members = ["telegram-bot", "meow-say"]

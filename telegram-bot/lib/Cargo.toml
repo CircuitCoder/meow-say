@@ -1,0 +1,37 @@
+[package]
+name = "telegram-bot"
+version = "0.8.0"
+authors = ["Lukas Kalbertodt <lukas.kalbertodt@gmail.com>", "Fedor Gogolev <knsd@knsd.net>", "Gustavo Aguiar <gustavo.h.o.aguiar@gmail.com>"]
+edition = "2018"
+
+description = "A library for creating Telegram bots"
+
+documentation = "https://docs.rs/telegram-bot/"
+repository = "https://github.com/telegram-rs/telegram-bot"
+readme = "../README.md"
+
+keywords = ["telegram", "bot", "chat", "api"]
+categories = ["api-bindings", "asynchronous"]
+license = "MIT"
+
+[features]
+openssl = ["hyper-tls"]
+rustls = ["hyper-rustls"]
+default = ["openssl"]
+[dependencies]
+bytes = "0.5"
+tokio = { version = "1.2.0", features = ["fs"]}
+
+tracing = "0.1.9"
+tracing-futures = "0.2"
+multipart = { version = "0.16", default-features = false, features = ["client"] }
+
+telegram-bot-raw = { version = "0.8.0", path = "../raw" }
+
+hyper = { version="0.14.4", features=["client", "http1", "http2"] }
+hyper-tls = { version = "0.5", optional = true  }
+futures = "0.3"
+hyper-rustls = { version = "0.19", optional = true }
+[dev-dependencies]
+tracing-subscriber = "0.1.5"
+tokio = { version = "1.2.0", features = ["macros", "time", "fs"] }
